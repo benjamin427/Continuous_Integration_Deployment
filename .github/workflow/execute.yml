@@ -1,0 +1,12 @@
+name: Random test
+on:
+ push:
+  branches: 
+    - master
+
+jobs: 
+ Cypress-Test:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout Gitcode
+     uses: actions/checkout@v2
