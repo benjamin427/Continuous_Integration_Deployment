@@ -1,4 +1,4 @@
-const {Given, Then, And} = require('@badeball/cypress-cucumber-preprocessor')
+const {Given, Then} = require('@badeball/cypress-cucumber-preprocessor')
 
 
 Given("navigate to the webstite", () => {
