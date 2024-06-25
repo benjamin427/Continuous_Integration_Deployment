@@ -8,5 +8,7 @@ jobs:
  Cypress-Test:
   runs-on: ubuntu-latest
   steps:
-   - name: Checkout Gitcode
+   - name: Checkout
      uses: actions/checkout@v2
+   - name: Run Cypress
+     uses: cypress-io/github-action@v6
