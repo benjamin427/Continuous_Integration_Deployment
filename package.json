@@ -1,0 +1,34 @@
+{
+  "name": "cypress_continuous_integration_deployment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open:chrome": "cypress open --e2e --browser chrome",
+    "cypress:open:firefox": "cypress open --e2e --browser firefox",
+    "cypress:open:edge": "cypress open --e2e --browser edge",
+    "cypress:run:chrome": "cypress run --spec=cypress/features/* --e2e --browser chrome",
+    "cypress:run:firefox": "cypress run --spec=cypress/features/* --e2e --browser firefox",
+    "cypress:run:edge": "cypress run --spec=cypress/features/* --e2e --browser edge",
+    "clean-report": "rmdir cypress\\report /Q /S && mkdir cypress\\report",
+    "pretest": "npm run clean-report",
+    "scripts": "cypress run",
+    "combine-report": "mochawesome-merge cypress/report/*.json > mochawesome.json",
+    "generate-report": "marge mochawesome.json",
+    "create-report": "npm run combine-report && npm run generate-report" 
+  },
+  "author": "Benjamin Saint Elien",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.1"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "cypress": "^13.12.0",
+    "mocha": "^10.5.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
